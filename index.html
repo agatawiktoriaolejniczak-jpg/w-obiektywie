@@ -775,7 +775,9 @@
                 grid-auto-rows: 200px;
             }
 
-            /* no span on mobile either */
+            .venue-layout {
+                grid-template-columns: 1fr !important;
+            }
 
             .team-card {
                 grid-template-columns: 1fr;
@@ -1112,25 +1114,29 @@
 </section>
 
 <!-- MIEJSCE -->
-<section class="venue" id="miejsce" style="padding:4rem 2rem;background:var(--navy-dark);color:var(--white);text-align:center;">
+<section class="venue" id="miejsce" style="padding:4rem 2rem;background:var(--navy-dark);color:var(--white);">
     <div class="section-inner">
-        <span class="section-label" style="color:var(--gold);">Miejsce warsztatów</span>
-        <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Dom Kryształowy</h2>
-        <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);font-style:italic;margin-bottom:2rem;">Aleksandria pod Częstochową</p>
-
-        <div style="max-width:650px;margin:0 auto 2rem;">
-            <p class="fade-up" style="font-size:0.95rem;color:rgba(255,255,255,0.75);line-height:1.8;">
-                Warsztaty w miejscu, które samo w sobie jest doświadczeniem — drewniany dom
-                otoczony lasem, z kominkiem, kryształami i ciszą. Idealne tło dla sesji zdjęciowej:
-                naturalne światło, klimatyczne wnętrza i energia, w której każda kobieta czuje się wyjątkowo.
-            </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;margin-bottom:2.5rem;" class="venue-layout">
+            <div class="fade-up">
+                <span class="section-label" style="color:var(--gold);">Miejsce warsztatów</span>
+                <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Dom Kryształowy</h2>
+                <p style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--gold-light);font-style:italic;margin-bottom:1.5rem;">Aleksandria pod Częstochową</p>
+                <p style="font-size:0.95rem;color:rgba(255,255,255,0.75);line-height:1.8;margin-bottom:1.5rem;">
+                    Warsztaty w miejscu, które samo w sobie jest doświadczeniem — drewniany dom
+                    otoczony lasem, z kominkiem, kryształami i ciszą. Idealne tło dla sesji zdjęciowej:
+                    naturalne światło, klimatyczne wnętrza i energia, w której każda kobieta czuje się wyjątkowo.
+                </p>
+                <p style="font-size:0.9rem;color:var(--gold-light);">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="vertical-align:middle;margin-right:0.3rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                    ul. Górna 51, Aleksandria pod Częstochową
+                </p>
+            </div>
+            <div class="fade-up" style="border-radius:12px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.3);">
+                <img src="img/venue-exterior.jpg" alt="Dom Kryształowy z lotu ptaka" style="width:100%;display:block;" loading="lazy">
+            </div>
         </div>
 
-        <div style="max-width:450px;margin:0 auto 2rem;border-radius:12px;overflow:hidden;box-shadow:0 15px 40px rgba(0,0,0,0.3);">
-            <img src="img/venue-exterior.jpg" alt="Dom Kryształowy z lotu ptaka" style="width:100%;display:block;" loading="lazy">
-        </div>
-
-        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem;">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;">
             <div class="fade-up" style="padding:2rem 1rem;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
                 <div style="font-size:2rem;margin-bottom:0.75rem;">
                     <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
@@ -1161,10 +1167,6 @@
             </div>
         </div>
 
-        <p style="font-size:0.95rem;color:var(--gold-light);">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="vertical-align:middle;margin-right:0.3rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            ul. Górna 51, Aleksandria pod Częstochową
-        </p>
     </div>
 </section>
 
@@ -1228,36 +1230,33 @@
 
 <!-- FOOTER -->
 <footer>
-    <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;text-align:left;">
-        <div>
-            <div class="footer-brand" style="margin-bottom:0.5rem;">W Obiektywie</div>
-            <p style="font-size:0.8rem;opacity:0.5;line-height:1.6;">Autorski projekt łączący warsztaty marki osobistej z profesjonalną sesją zdjęciową.</p>
-        </div>
-        <div>
-            <p style="font-size:0.75rem;font-weight:600;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Kontakt</p>
-            <div class="footer-contact" style="display:flex;flex-direction:column;gap:0.4rem;">
-                <a href="tel:+48885331332">+48 885 331 332</a>
-                <a href="mailto:biuro@openglobal.pl">biuro@openglobal.pl</a>
-                <a href="https://openglobal.pl" target="_blank">openglobal.pl</a>
+    <div style="max-width:900px;margin:0 auto;">
+        <!-- Row 1: Info + Kontakt -->
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;">
+            <div>
+                <div class="footer-brand" style="margin-bottom:0.5rem;">W Obiektywie</div>
+                <p style="font-size:0.8rem;opacity:0.5;line-height:1.6;max-width:280px;">Warsztaty marki osobistej i profesjonalna sesja zdjęciowa dla kobiet.</p>
+            </div>
+            <div style="text-align:right;">
+                <p style="font-size:0.75rem;font-weight:600;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.5rem;">Kontakt</p>
+                <div class="footer-contact" style="display:flex;flex-direction:column;gap:0.3rem;">
+                    <a href="tel:+48885331332">+48 885 331 332</a>
+                    <a href="mailto:biuro@openglobal.pl">biuro@openglobal.pl</a>
+                </div>
             </div>
         </div>
-        <div style="text-align:center;">
-            <p style="font-size:0.75rem;font-weight:600;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:1.25rem;">Organizatorzy</p>
-            <div style="display:flex;justify-content:center;gap:3rem;">
-                <a href="https://openglobal.pl" target="_blank" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-decoration:none;width:160px;height:90px;">
-                    <img src="img/openglobal-sygnet.png" alt="Open Global" style="height:44px;object-fit:contain;">
+        <!-- Row 2: Organizatorzy -->
+        <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:1.5rem;text-align:center;">
+            <p style="font-size:0.7rem;font-weight:600;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:1rem;">Organizatorzy</p>
+            <div style="display:flex;justify-content:center;align-items:center;gap:3rem;">
+                <a href="https://openglobal.pl" target="_blank" style="text-decoration:none;text-align:center;">
+                    <img src="img/openglobal-sygnet.png" alt="Open Global" style="height:40px;object-fit:contain;display:block;margin:0 auto 0.4rem;">
+                    <span style="font-size:0.7rem;color:var(--gold-light);">openglobal.pl</span>
                 </a>
-                <a href="https://malgorzatajochaniak.pl" target="_blank" style="display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-decoration:none;width:160px;height:90px;">
-                    <img src="img/mj-logo-white.png" alt="MJ Jochaniak" style="height:44px;object-fit:contain;">
+                <a href="https://malgorzatajochaniak.pl" target="_blank" style="text-decoration:none;text-align:center;">
+                    <img src="img/mj-logo-white.png" alt="MJ Jochaniak" style="height:40px;object-fit:contain;display:block;margin:0 auto 0.4rem;">
+                    <span style="font-size:0.7rem;color:var(--gold-light);">malgorzatajochaniak.pl</span>
                 </a>
-            </div>
-            <div style="display:flex;justify-content:center;gap:3rem;margin-top:0.5rem;">
-                <span style="display:block;width:160px;text-align:center;font-size:0.75rem;color:var(--gold-light);">
-                    <a href="https://openglobal.pl" target="_blank" style="color:var(--gold-light);text-decoration:none;">openglobal.pl</a>
-                </span>
-                <span style="display:block;width:160px;text-align:center;font-size:0.75rem;color:var(--gold-light);">
-                    <a href="https://malgorzatajochaniak.pl" target="_blank" style="color:var(--gold-light);text-decoration:none;">malgorzatajochaniak.pl</a>
-                </span>
             </div>
         </div>
     </div>
