@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W Obiektywie — Odkryj siebie na nowo | Open Global</title>
+    <meta name="description" content="Bezpłatne warsztaty marki osobistej i profesjonalna sesja zdjęciowa dla kobiet. Projekt autorski Karoliny Stelli i Małgorzaty Jochaniak.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lexend+Deca:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #2A3A6C;
+            --navy-dark: #1E2B52;
+            --og-blue: #337DC0;
+            --gold: #C8A45A;
+            --gold-light: #E8D5A0;
+            --cream: #F8F9FB;
+            --light-gray: #EBECEC;
+            --mid-gray: #C5C6C6;
+            --warm-gray: #6B6560;
+            --text: #2D2926;
+            --white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lexend Deca', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        /* ===== NAVIGATION ===== */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2rem;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-logo:hover {
+            opacity: 0.85;
+        }
+
+        .nav-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .nav-logo-wobiektywie {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--white);
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-logo-og {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav.scrolled .nav-logo-wobiektywie {
+            color: var(--navy);
+        }
+
+        nav.scrolled .nav-logo-og {
+            color: var(--og-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        nav.scrolled .nav-links a {
+            color: var(--navy);
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--white) !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            transition: transform 0.3s, background 0.3s !important;
+        }
+
+        .nav-cta:hover {
+            transform: scale(1.05);
+            background: var(--og-blue) !important;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('img/group.jpg') center/cover;
+            filter: brightness(0.35);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15,38,64,0.7) 0%, rgba(27,58,92,0.4) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-light);
+            border: 1px solid var(--gold);
+            padding: 0.4rem 1.5rem;
+            border-radius: 30px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--white);
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 25px rgba(200, 164, 90, 0.4);
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(200, 164, 90, 0.5);
+            background: #d4b06a;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255,255,255,0.6);
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 2;
+        }
+
+        .hero-scroll::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 40px;
+            background: rgba(255,255,255,0.4);
+            margin: 0.5rem auto 0;
+            animation: scrollLine 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollLine {
+            0%, 100% { transform: scaleY(0.5); opacity: 0.3; }
+            50% { transform: scaleY(1); opacity: 1; }
+        }
+
+        /* ===== SECTIONS COMMON ===== */
+        section {
+            padding: 6rem 2rem;
+        }
+
+        .section-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-text {
+            font-size: 1.05rem;
+            color: var(--warm-gray);
+            max-width: 650px;
+            line-height: 1.8;
+        }
+
+        /* ===== ABOUT / O PROJEKCIE ===== */
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 30%;
+            background: linear-gradient(transparent, rgba(15,38,64,0.2));
+        }
+
+        /* ===== CO ZYSKUJESZ ===== */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3.5rem;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            background: var(--white);
+            border: 1px solid #eee;
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(42,58,108,0.1);
+            border-color: var(--og-blue);
+        }
+
+        .benefit-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--og-blue), var(--navy));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+        }
+
+        /* ===== GALERIA ===== */
+        .gallery {
+            background: var(--navy-dark);
+            padding: 6rem 2rem;
+        }
+
+        .gallery .section-label {
+            color: var(--gold-light);
+        }
+
+        .gallery .section-title {
+            color: var(--white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 280px;
+            gap: 0.75rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+
+        /* no span — equal grid */
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 60%, rgba(15,38,64,0.4));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .gallery-more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,0.05);
+            border: 2px dashed rgba(255,255,255,0.2);
+            border-radius: 10px;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: all 0.3s;
+        }
+
+        .gallery-more:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        /* ===== PROWADZACE / TEAM ===== */
+        .team {
+            background: var(--cream);
+        }
+
+        .team-card {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+            padding: 3rem;
+            border-radius: 20px;
+            background: var(--white);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+
+        .team-card + .team-card {
+            margin-top: 3rem;
+        }
+
+        .team-card:nth-child(even) {
+            direction: rtl;
+        }
+
+        .team-card:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .team-photo {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 3/4;
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .team-info .section-label {
+            margin-bottom: 0.5rem;
+        }
+
+        .team-name {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+
+        .team-role {
+            font-size: 0.9rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-desc {
+            font-size: 0.95rem;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .team-highlight {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .team-stat {
+            text-align: center;
+        }
+
+        .team-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .team-stat-label {
+            font-size: 0.75rem;
+            color: var(--warm-gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== KIEDY I GDZIE / EVENT INFO ===== */
+        .event-info {
+            background: linear-gradient(135deg, var(--og-blue) 0%, var(--navy) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .event-info .section-title {
+            color: var(--white);
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .event-detail {
+            padding: 2rem;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .event-detail-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .event-detail h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .event-detail p {
+            font-size: 0.95rem;
+            opacity: 0.7;
+        }
+
+        .event-tbd {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            background: rgba(200,164,90,0.2);
+            color: var(--gold-light);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ===== CTA / ZAPISY ===== */
+        .cta-section {
+            background: var(--cream);
+            text-align: center;
+            padding: 7rem 2rem;
+        }
+
+        .cta-section .section-title {
+            margin-bottom: 1rem;
+        }
+
+        .cta-text {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            max-width: 550px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--og-blue);
+            color: var(--white);
+            padding: 1.1rem 3.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 25px rgba(51,125,192,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 35px rgba(51,125,192,0.4);
+            background: var(--navy);
+        }
+
+        .cta-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 0.25rem;
+        }
+
+        .cta-price span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--warm-gray);
+        }
+
+        .cta-price-desc {
+            font-size: 0.9rem;
+            color: var(--warm-gray);
+            margin-bottom: 2.5rem;
+        }
+
+        /* ===== LOGOS / PARTNERZY ===== */
+        .partners {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .partners p {
+            font-size: 0.75rem;
+            color: var(--warm-gray);
+            opacity: 0.7;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--navy-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact {
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact a {
+            color: var(--gold-light);
+            text-decoration: none;
+        }
+
+        .footer-contact a:hover {
+            color: var(--gold);
+        }
+
+        footer small {
+            font-size: 0.75rem;
+            opacity: 0.5;
+        }
+
+        /* ===== HAMBURGER MENU ===== */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            margin: 5px 0;
+            transition: all 0.3s;
+        }
+
+        nav.scrolled .hamburger span {
+            background: var(--navy);
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 900px) {
+            .hamburger {
+                display: block;
+                z-index: 101;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: var(--navy-dark);
+                flex-direction: column;
+                padding: 5rem 2rem 2rem;
+                transition: right 0.3s;
+            }
+
+            .nav-links.open {
+                right: 0;
+            }
+
+            .nav-links a {
+                color: var(--white) !important;
+                font-size: 1rem;
+                padding: 0.5rem 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 200px;
+            }
+
+            /* no span on mobile either */
+
+            .team-card {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                padding: 2rem;
+            }
+
+            .team-card:nth-child(even) {
+                direction: ltr;
+            }
+
+            .team-photo {
+                max-height: 400px;
+            }
+
+            .event-details {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr !important;
+                text-align: center !important;
+            }
+
+            .footer-inner > div {
+                text-align: center !important;
+            }
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== FLOATING CTA ===== */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            opacity: 0;
+            transform: translateY(20px);
+            pointer-events: none;
+            transition: all 0.4s ease;
+        }
+
+        .floating-cta.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .floating-cta a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: var(--og-blue);
+            color: var(--white);
+            padding: 0.9rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.03em;
+            box-shadow: 0 6px 30px rgba(51,125,192,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .floating-cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(51,125,192,0.5);
+            background: var(--navy);
+        }
+
+        .floating-cta svg {
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 900px) {
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                left: 1rem;
+            }
+
+            .floating-cta a {
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+    <div class="nav-inner">
+        <a href="#" class="nav-logo">
+            <img src="img/openglobal-sygnet.png" alt="Open Global" class="nav-sygnet" style="width:32px;height:32px;object-fit:contain;border-radius:6px;">
+            <div class="nav-logo-text">
+                <span class="nav-logo-wobiektywie">W Obiektywie</span>
+                <span class="nav-logo-og">by Open Global</span>
+            </div>
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#o-projekcie">O projekcie</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#prowadzace">Prowadzące</a></li>
+            <li><a href="#kiedy-gdzie">Kiedy i gdzie</a></li>
+            <li><a href="#zapisy" class="nav-cta">Zapisz się</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <span class="hero-badge">Wyjątkowe spotkanie kobiet</span>
+        <h1>Warsztaty wizerunkowe<br><em>+ profesjonalna sesja foto</em></h1>
+        <p class="hero-subtitle">
+            Jeden dzień, dwa doświadczenia: konsultacja marki osobistej
+            i sesja zdjęciowa z profesjonalną fotografką. Wychodzisz z gotowymi
+            zdjęciami na LinkedIn, stronę czy social media.
+        </p>
+        <a href="#zapisy" class="hero-cta">Zapisz się na warsztaty</a>
+    </div>
+    <div class="hero-scroll">Przewiń</div>
+</section>
+
+<!-- O PROJEKCIE -->
+<section class="about" id="o-projekcie">
+    <div class="section-inner">
+        <div class="about-grid">
+            <div class="fade-up">
+                <span class="section-label">O projekcie</span>
+                <h2 class="section-title">Szansa dla kobiet, które chcą uwierzyć w siebie</h2>
+                <p class="section-text">
+                    <strong>W Obiektywie</strong> to autorski projekt łączący warsztaty marki osobistej
+                    z profesjonalną sesją zdjęciową. Podczas spotkania dowiesz się, jak świadomie
+                    budować swój wizerunek, a następnie weźmiesz udział w sesji, która podkreśli
+                    Twoją autentyczność i profesjonalizm.
+                </p>
+                <br>
+                <p class="section-text">
+                    Udział w projekcie to inwestycja w siebie za jedyne <strong>499 zł</strong> —
+                    w cenie warsztaty marki osobistej, indywidualna konsultacja
+                    oraz profesjonalna sesja zdjęciowa z obróbką.
+                </p>
+            </div>
+            <div class="about-image fade-up">
+                <img src="img/workshop-photos.jpg" alt="Warsztaty W Obiektywie" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CO ZYSKUJESZ -->
+<section id="korzysci">
+    <div class="section-inner" style="text-align: center;">
+        <span class="section-label">Co zyskujesz</span>
+        <h2 class="section-title">Jeden dzień, który zmienia perspektywę</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
+                </div>
+                <h3>Marka osobista</h3>
+                <p>Konsultacja, która pomoże Ci odkryć Twoje mocne strony i świadomie budować wizerunek zawodowy.</p>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M12 9v0"/></svg>
+                </div>
+                <h3>Sesja zdjęciowa</h3>
+                <p>Profesjonalne zdjęcia portretowe i wizerunkowe, które możesz wykorzystać na LinkedIn, stronie czy w CV.</p>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+                </div>
+                <h3>Pewność siebie</h3>
+                <p>Wzmocnij poczucie własnej wartości i motywację w otoczeniu wspierających kobiet.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIA -->
+<section class="gallery" id="galeria">
+    <div class="section-inner">
+        <span class="section-label">Galeria</span>
+        <h2 class="section-title">Jak wyglądają nasze spotkania</h2>
+        <div class="gallery-grid">
+            <!-- Row 1 -->
+            <div class="gallery-item">
+                <img src="img/gallery-5.jpg" alt="Uczestniczki robią sobie zdjęcia" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-1.jpg" alt="Portret przy oknie" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-4.jpg" alt="Portret przy schodach" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-3.jpg" alt="Portret uczestniczki" loading="lazy">
+            </div>
+            <!-- Row 2 -->
+            <div class="gallery-item">
+                <img src="img/gallery-2.jpg" alt="Sesja portretowa" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-9.jpg" alt="Radość na warsztatach" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-14.jpg" alt="Portret przy oknie" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/portrait1.jpg" alt="Sesja portretowa" loading="lazy">
+            </div>
+            <!-- Row 3 -->
+            <div class="gallery-item">
+                <img src="img/gallery-7.jpg" alt="Konsultacja w grupie" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-12.jpg" alt="Portret przy fortepianie" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-8.jpg" alt="Konsultacja indywidualna" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/portrait3.jpg" alt="Portret uczestniczki" loading="lazy">
+            </div>
+            <!-- Row 4 -->
+            <div class="gallery-item">
+                <img src="img/gallery-11.jpg" alt="Rozmowy uczestniczek" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-15.jpg" alt="Uczestniczki słuchają" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-13.jpg" alt="Konsultacja z laptopem" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-16.jpg" alt="Prezentacja na warsztatach" loading="lazy">
+            </div>
+            <!-- Row 5 -->
+            <div class="gallery-item">
+                <img src="img/gallery-17.jpg" alt="Zdjęcia rozłożone na podłodze" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-18.jpg" alt="Warsztaty w grupie" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-19.jpg" alt="Przeglądanie zdjęć" loading="lazy">
+            </div>
+            <div class="gallery-item">
+                <img src="img/gallery-20.jpg" alt="Praca ze zdjęciami" loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROWADZACE -->
+<section class="team" id="prowadzace">
+    <div class="section-inner">
+        <div style="text-align: center; margin-bottom: 1rem;">
+            <span class="section-label">Prowadzące</span>
+            <h2 class="section-title">Poznaj nas</h2>
+        </div>
+
+        <!-- Małgorzata Jochaniak -->
+        <div class="team-card fade-up">
+            <div class="team-photo">
+                <img src="img/malgorzata.jpg" alt="Małgorzata Jochaniak" loading="lazy">
+            </div>
+            <div class="team-info">
+                <span class="section-label">Marka osobista &amp; strategia</span>
+                <h3 class="team-name">Małgorzata Jochaniak</h3>
+                <p class="team-role">Właścicielka Open Global &bull; Ekspertka marki osobistej</p>
+                <p class="team-desc">
+                    Założycielka i właścicielka marki Open Global — firmy doradczej, która wspiera
+                    przedsiębiorców i zespoły w budowaniu silnego wizerunku i skutecznej komunikacji.
+                    Od lat pomaga kobietom i managerom odkrywać ich potencjał i świadomie kształtować
+                    markę osobistą.
+                </p>
+                <p class="team-desc">
+                    Podczas warsztatów W Obiektywie poprowadzi Cię przez proces odkrywania Twoich
+                    unikalnych cech i aspiracji zawodowych. Jej podejście łączy biznesową strategię
+                    z autentycznością — bo najlepsza marka osobista to ta, która jest prawdziwa.
+                </p>
+            </div>
+        </div>
+
+        <!-- Karolina Stella -->
+        <div class="team-card fade-up">
+            <div class="team-photo">
+                <img src="img/karolina.jpg" alt="Karolina Stella" loading="lazy">
+            </div>
+            <div class="team-info">
+                <span class="section-label">Fotografia &amp; wizja</span>
+                <h3 class="team-name">Karolina Stella</h3>
+                <p class="team-role">Fotografka projektu</p>
+                <p class="team-desc">
+                    Karolina Stella to autorka fotograficzna projektu W Obiektywie. Mama dwóch córek,
+                    dla której fotografia jest pasją i sposobem na życie. Specjalizuje się w sesjach
+                    biznesowych i kobiecych — tworzy zdjęcia, które są wizytówką i podkreślają
+                    autentyczność, profesjonalizm i energię każdej osoby.
+                </p>
+                <p class="team-desc">
+                    Wierzy, że zdjęcie przekazuje o nas więcej niż tysiąc słów — buduje zaufanie
+                    i wzmacnia markę osobistą. Sesja z Karoliną to doświadczenie, które pozwala
+                    poczuć się pewnie przed obiektywem i zobaczyć siebie w zupełnie nowym świetle.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KIEDY I GDZIE -->
+<section class="event-info" id="kiedy-gdzie">
+    <div class="section-inner">
+        <span class="section-label" style="color: var(--gold-light)">Kiedy i gdzie</span>
+        <h2 class="section-title">Najbliższe spotkanie</h2>
+        <div class="event-details">
+            <div class="event-detail">
+                <div class="event-detail-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                </div>
+                <h3>Data</h3>
+                <span class="event-tbd">Wkrótce potwierdzimy</span>
+            </div>
+            <div class="event-detail">
+                <div class="event-detail-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                </div>
+                <h3>Miejsce</h3>
+                <span class="event-tbd">Wkrótce potwierdzimy</span>
+            </div>
+            <div class="event-detail">
+                <div class="event-detail-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Czas trwania</h3>
+                <p>Cały dzień warsztatów + sesja zdjęciowa</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA / ZAPISY -->
+<section class="cta-section" id="zapisy">
+    <div class="section-inner">
+        <span class="section-label">Zapisy</span>
+        <h2 class="section-title">Gotowa, żeby się zapisać?</h2>
+        <p class="cta-text">
+            Wypełnij krótki formularz i dołącz do projektu.
+            Liczba miejsc jest ograniczona.
+        </p>
+        <div class="cta-price">499 <span>zł</span></div>
+        <p class="cta-price-desc">Warsztaty + konsultacja + sesja zdjęciowa z obróbką</p>
+        <a href="#zapisy" class="cta-button" id="stripe-checkout">Zapisz się i zapłać online</a>
+        <p style="margin-top:1rem;font-size:0.8rem;color:var(--warm-gray);">Bezpieczna płatność przez Stripe</p>
+    </div>
+</section>
+
+<!-- PARTNERZY -->
+<div class="partners">
+    <p>
+        Finansowane ze środków Narodowego Instytutu Wolności —
+        Centrum Rozwoju Społeczeństwa Obywatelskiego w ramach
+        Rządowego Programu Funduszu Inicjatyw Obywatelskich
+        NOWEFIO na lata 2021-2030.
+    </p>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;text-align:left;">
+        <div>
+            <div class="footer-brand" style="margin-bottom:0.5rem;">W Obiektywie</div>
+            <p style="font-size:0.8rem;opacity:0.5;line-height:1.6;">Autorski projekt łączący warsztaty marki osobistej z profesjonalną sesją zdjęciową.</p>
+        </div>
+        <div>
+            <p style="font-size:0.75rem;font-weight:600;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Kontakt</p>
+            <div class="footer-contact" style="display:flex;flex-direction:column;gap:0.4rem;">
+                <a href="tel:+48885331332">+48 885 331 332</a>
+                <a href="mailto:biuro@openglobal.pl">biuro@openglobal.pl</a>
+                <a href="https://openglobal.pl" target="_blank">openglobal.pl</a>
+            </div>
+        </div>
+        <div style="text-align:right;">
+            <p style="font-size:0.75rem;font-weight:600;color:var(--gold-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.75rem;">Organizator</p>
+            <a href="https://openglobal.pl" target="_blank" style="display:inline-block;">
+                <img src="img/openglobal-sygnet.png" alt="Open Global" style="height:50px;">
+            </a>
+            <p style="font-size:0.8rem;margin-top:0.5rem;"><a href="https://openglobal.pl" target="_blank" style="color:var(--gold-light);text-decoration:none;">openglobal.pl</a></p>
+        </div>
+    </div>
+    <div style="max-width:1100px;margin:2rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1);text-align:center;">
+        <small>&copy; 2025 Open Global. Wszystkie prawa zastrzeżone.</small>
+    </div>
+</footer>
+
+<!-- FLOATING CTA -->
+<div class="floating-cta" id="floatingCta">
+    <a href="#zapisy" id="floating-stripe">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+        Zapisz się — 499 zł
+    </a>
+</div>
+
+<script>
+    // Navbar scroll effect + floating CTA
+    const nav = document.getElementById('navbar');
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.hero');
+
+    window.addEventListener('scroll', () => {
+        nav.classList.toggle('scrolled', window.scrollY > 50);
+
+        // Show floating CTA after scrolling past hero
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        floatingCta.classList.toggle('visible', window.scrollY > heroBottom - 200);
+    });
+
+    // Hamburger menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
