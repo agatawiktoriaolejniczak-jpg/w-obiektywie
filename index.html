@@ -547,123 +547,6 @@
             letter-spacing: 0.05em;
         }
 
-        /* ===== VENUE / MIEJSCE ===== */
-        .venue {
-            background: var(--white);
-            padding: 0;
-        }
-
-        .venue-hero {
-            position: relative;
-            height: 50vh;
-            min-height: 400px;
-            overflow: hidden;
-        }
-
-        .venue-hero img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 30%;
-        }
-
-        .venue-hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(transparent 20%, rgba(15,38,64,0.7) 100%);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 3rem;
-        }
-
-        .venue-content {
-            padding: 4rem 2rem;
-            background: var(--cream);
-        }
-
-        .venue-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .venue-text p {
-            font-size: 1rem;
-            color: var(--warm-gray);
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .venue-image {
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 16/10;
-        }
-
-        .venue-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .venue-features {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .venue-feature {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            background: var(--white);
-            border-radius: 12px;
-            border: 1px solid #eee;
-        }
-
-        .venue-feature-icon {
-            margin-bottom: 0.75rem;
-        }
-
-        .venue-feature h4 {
-            font-family: 'Lexend Deca', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--navy);
-            margin-bottom: 0.3rem;
-        }
-
-        .venue-feature p {
-            font-size: 0.8rem;
-            color: var(--warm-gray);
-        }
-
-        .venue-address {
-            text-align: center;
-            font-size: 0.95rem;
-            color: var(--navy);
-            font-weight: 500;
-        }
-
-        @media (max-width: 900px) {
-            .venue-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .venue-features {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .venue-hero {
-                height: 35vh;
-                min-height: 250px;
-            }
-        }
-
         /* ===== KIEDY I GDZIE / EVENT INFO ===== */
         .event-info {
             background: linear-gradient(135deg, var(--og-blue) 0%, var(--navy) 100%);
@@ -1229,71 +1112,61 @@
 </section>
 
 <!-- MIEJSCE -->
-<section class="venue" id="miejsce">
-    <div class="venue-hero">
-        <img src="img/venue-exterior.jpg" alt="Dom Kryształowy w Aleksandrii" loading="lazy">
-        <div class="venue-hero-overlay">
-            <span class="section-label" style="color: var(--gold-light);">Miejsce warsztatów</span>
-            <h2 class="section-title" style="color: var(--white); max-width: 700px;">Dom Kryształowy<br><em style="font-weight:400;color:var(--gold-light);">Aleksandria pod Częstochową</em></h2>
-        </div>
-    </div>
-    <div class="venue-content">
-        <div class="section-inner">
-            <div class="venue-grid">
-                <div class="venue-text fade-up">
-                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:1rem;">Wyobraź sobie...</h3>
-                    <p>
-                        Warsztaty w miejscu, które samo w sobie jest doświadczeniem. Drewniany dom
-                        otoczony lasem, z kominkiem, kryształami i ciszą, która pozwala się otworzyć.
-                        Tutaj nie ma biurowych ścian i sztucznego światła — jest natura, przestrzeń
-                        i energia, która pomaga odkryć coś w sobie.
-                    </p>
-                    <p>
-                        To idealne tło dla Twojej sesji zdjęciowej i warsztatów marki osobistej.
-                        Drewniane wnętrza, naturalne światło wpadające przez ogromne okna
-                        i klimat, w którym każda kobieta czuje się wyjątkowo. Dom Kryształowy
-                        to nie lokalizacja — to część doświadczenia.
-                    </p>
-                </div>
-                <div class="venue-image fade-up">
-                    <img src="img/venue-interior.jpg" alt="Wnętrze Domu Kryształowego — kominek i kryształy" loading="lazy">
-                </div>
-            </div>
-            <div class="venue-features">
-                <div class="venue-feature fade-up">
-                    <div class="venue-feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
-                    </div>
-                    <h4>Wyjątkowe wnętrza</h4>
-                    <p>Drewno, kryształy i naturalne światło</p>
-                </div>
-                <div class="venue-feature fade-up">
-                    <div class="venue-feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
-                    </div>
-                    <h4>Sala warsztatowa</h4>
-                    <p>Przestrzeń na warsztaty i pracę twórczą</p>
-                </div>
-                <div class="venue-feature fade-up">
-                    <div class="venue-feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
-                    </div>
-                    <h4>Idealne tło do zdjęć</h4>
-                    <p>Klimatyczne kadry w każdym kącie domu</p>
-                </div>
-                <div class="venue-feature fade-up">
-                    <div class="venue-feature-icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M4.5 19.5l15-15m-12.5.5h4v4m4 4h4v4"/></svg>
-                    </div>
-                    <h4>Las i natura</h4>
-                    <p>Ścieżki w lesie, ogniska i cisza</p>
-                </div>
-            </div>
-            <p class="venue-address">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="vertical-align:middle;margin-right:0.3rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                ul. Górna 51, Aleksandria pod Częstochową
+<section class="venue" id="miejsce" style="padding:6rem 2rem;background:var(--navy-dark);color:var(--white);text-align:center;">
+    <div class="section-inner">
+        <span class="section-label" style="color:var(--gold);">Miejsce warsztatów</span>
+        <h2 class="section-title" style="color:var(--white);margin-bottom:0.5rem;">Dom Kryształowy</h2>
+        <p style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--gold-light);font-style:italic;margin-bottom:2.5rem;">Aleksandria pod Częstochową</p>
+
+        <div style="max-width:680px;margin:0 auto 3rem;">
+            <p class="fade-up" style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.9;margin-bottom:1.5rem;">
+                Warsztaty w miejscu, które samo w sobie jest doświadczeniem. Drewniany dom
+                otoczony lasem, z kominkiem, kryształami i ciszą, która pozwala się otworzyć.
+                Tutaj nie ma biurowych ścian i sztucznego światła — jest natura, przestrzeń
+                i energia, która pomaga odkryć coś w sobie.
+            </p>
+            <p class="fade-up" style="font-size:1.05rem;color:rgba(255,255,255,0.8);line-height:1.9;">
+                To idealne tło dla Twojej sesji zdjęciowej i warsztatów marki osobistej.
+                Drewniane wnętrza, naturalne światło wpadające przez ogromne okna
+                i klimat, w którym każda kobieta czuje się wyjątkowo.
             </p>
         </div>
+
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-bottom:3rem;">
+            <div class="fade-up" style="padding:2rem 1rem;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+                <div style="font-size:2rem;margin-bottom:0.75rem;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+                </div>
+                <h4 style="font-family:'Lexend Deca',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;">Wyjątkowe wnętrza</h4>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Drewno, kryształy i naturalne światło</p>
+            </div>
+            <div class="fade-up" style="padding:2rem 1rem;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+                <div style="font-size:2rem;margin-bottom:0.75rem;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+                </div>
+                <h4 style="font-family:'Lexend Deca',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;">Sala warsztatowa</h4>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Przestrzeń na warsztaty i pracę twórczą</p>
+            </div>
+            <div class="fade-up" style="padding:2rem 1rem;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+                <div style="font-size:2rem;margin-bottom:0.75rem;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><circle cx="12" cy="13" r="4"/><path d="M12 9v0"/></svg>
+                </div>
+                <h4 style="font-family:'Lexend Deca',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;">Idealne tło do zdjęć</h4>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Klimatyczne kadry w każdym kącie domu</p>
+            </div>
+            <div class="fade-up" style="padding:2rem 1rem;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+                <div style="font-size:2rem;margin-bottom:0.75rem;">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5"><path d="M5 3a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2H5z"/><path d="M8 12c1-4 7-4 8 0"/><circle cx="9" cy="8" r="1"/></svg>
+                </div>
+                <h4 style="font-family:'Lexend Deca',sans-serif;font-size:0.95rem;font-weight:600;margin-bottom:0.3rem;">Las i natura</h4>
+                <p style="font-size:0.8rem;color:rgba(255,255,255,0.5);">Ścieżki w lesie, ogniska i cisza</p>
+            </div>
+        </div>
+
+        <p style="font-size:0.95rem;color:var(--gold-light);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="vertical-align:middle;margin-right:0.3rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            ul. Górna 51, Aleksandria pod Częstochową
+        </p>
     </div>
 </section>
 
