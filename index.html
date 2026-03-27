@@ -547,6 +547,123 @@
             letter-spacing: 0.05em;
         }
 
+        /* ===== VENUE / MIEJSCE ===== */
+        .venue {
+            background: var(--white);
+            padding: 0;
+        }
+
+        .venue-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            overflow: hidden;
+        }
+
+        .venue-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+        }
+
+        .venue-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent 20%, rgba(15,38,64,0.7) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 3rem;
+        }
+
+        .venue-content {
+            padding: 4rem 2rem;
+            background: var(--cream);
+        }
+
+        .venue-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            margin-bottom: 3rem;
+        }
+
+        .venue-text p {
+            font-size: 1rem;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .venue-image {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+
+        .venue-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .venue-features {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .venue-feature {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #eee;
+        }
+
+        .venue-feature-icon {
+            margin-bottom: 0.75rem;
+        }
+
+        .venue-feature h4 {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.3rem;
+        }
+
+        .venue-feature p {
+            font-size: 0.8rem;
+            color: var(--warm-gray);
+        }
+
+        .venue-address {
+            text-align: center;
+            font-size: 0.95rem;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+        @media (max-width: 900px) {
+            .venue-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .venue-features {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .venue-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+        }
+
         /* ===== KIEDY I GDZIE / EVENT INFO ===== */
         .event-info {
             background: linear-gradient(135deg, var(--og-blue) 0%, var(--navy) 100%);
@@ -899,7 +1016,7 @@
             <li><a href="#o-projekcie">O projekcie</a></li>
             <li><a href="#galeria">Galeria</a></li>
             <li><a href="#prowadzace">Prowadzące</a></li>
-            <li><a href="#kiedy-gdzie">Kiedy i gdzie</a></li>
+            <li><a href="#miejsce">Miejsce</a></li>
             <li><a href="#zapisy" class="nav-cta">Zapisz się</a></li>
         </ul>
     </div>
@@ -1107,6 +1224,73 @@
                     poczuć się pewnie przed obiektywem i zobaczyć siebie w zupełnie nowym świetle.
                 </p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- MIEJSCE -->
+<section class="venue" id="miejsce">
+    <div class="venue-hero">
+        <img src="img/venue-1.jpg" alt="Dom Kryształowy w Aleksandrii" loading="lazy">
+        <div class="venue-hero-overlay">
+            <span class="section-label" style="color: var(--gold-light);">Miejsce warsztatów</span>
+            <h2 class="section-title" style="color: var(--white); max-width: 700px;">Dom Kryształowy<br><em style="font-weight:400;color:var(--gold-light);">Aleksandria pod Częstochową</em></h2>
+        </div>
+    </div>
+    <div class="venue-content">
+        <div class="section-inner">
+            <div class="venue-grid">
+                <div class="venue-text fade-up">
+                    <h3 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--navy);margin-bottom:1rem;">Wyobraź sobie...</h3>
+                    <p>
+                        Dom, w którym wszystko tętni energią Ziemi. Każdy oddech staje się lżejszy,
+                        a każdy krok prowadzi Cię głębiej w świat harmonii i ciszy. Tu, w Kryształowym Pokoju,
+                        budzisz się otoczony blaskiem Kryształu Górskiego — czystego i nieskażonego jak źródło.
+                    </p>
+                    <p>
+                        To przestrzeń, w której czas zwalnia. Wieczorem siedzisz przy otwartym kominku,
+                        a w ciągu dnia wchodzisz na leśniczą siatkę, gdzie poczujesz się jakbyś unosiła się
+                        ponad ziemią, wśród zieleni i szeptu drzew.
+                    </p>
+                </div>
+                <div class="venue-image fade-up">
+                    <img src="img/venue-4.jpg" alt="Wnętrze Domu Kryształowego" loading="lazy">
+                </div>
+            </div>
+            <div class="venue-features">
+                <div class="venue-feature fade-up">
+                    <div class="venue-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2z"/></svg>
+                    </div>
+                    <h4>SPA z kryształami</h4>
+                    <p>Sauna i jacuzzi z energią minerałów</p>
+                </div>
+                <div class="venue-feature fade-up">
+                    <div class="venue-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+                    </div>
+                    <h4>Sala warsztatowa</h4>
+                    <p>Przestrzeń na warsztaty i pracę twórczą</p>
+                </div>
+                <div class="venue-feature fade-up">
+                    <div class="venue-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+                    </div>
+                    <h4>Energia minerałów</h4>
+                    <p>Pokoje z Kryształem, Turmalinem i Kwarcem</p>
+                </div>
+                <div class="venue-feature fade-up">
+                    <div class="venue-feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--og-blue)" stroke-width="1.5"><path d="M4.5 19.5l15-15m-12.5.5h4v4m4 4h4v4"/></svg>
+                    </div>
+                    <h4>Las i natura</h4>
+                    <p>Ścieżki w lesie, ogniska i cisza</p>
+                </div>
+            </div>
+            <p class="venue-address">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" style="vertical-align:middle;margin-right:0.3rem;"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+                ul. Górna 51, Aleksandria pod Częstochową
+            </p>
         </div>
     </div>
 </section>
